@@ -1,0 +1,10 @@
+{
+  "name": "ecs-task-control",
+  "version": "1.0.0",
+  "description": "ecs-task-control",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.4.0"
+  }
+}

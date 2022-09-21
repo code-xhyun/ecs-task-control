@@ -1,0 +1,29 @@
+service: ecs-task-scheduler
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ap-northeast-2
+  environment:
+    slackToken: "your-slack-token"
+    clusterName: "your-cluster-name"
+    serviceName: "your-service-name"
+  iamManagedPolicies:
+    - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+    - arn:aws:iam::aws:policy/AmazonS3FullAccess
+    - arn:aws:iam::aws:policy/AmazonECS_FullAccess
+
+functions:
+  scaleOutCronHandler:
+    handler: src/handler.scale_out
+    events:
+      - schedule: cron(0 0 ? * MON-FRI *)
+  scaleInCronHandler:
+    handler: src/handler.scale_in
+    events:
+      - schedule: cron(0 10 ? * MON-FRI *)
+
+plugins:
+  - serverless-python-requirements
