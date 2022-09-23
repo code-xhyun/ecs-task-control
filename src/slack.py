@@ -31,7 +31,7 @@ def send_adjust_size(service, desiredCount, reason):
         text = (
             f"scale out \n- Target: {service}\n- Scale: {desiredCount}EA",
         )
-    send_slack_msg("richtalk-backend", text)
+    send_slack_msg("yout-channel-name", text)
 
 
 
