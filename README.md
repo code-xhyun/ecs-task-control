@@ -1,6 +1,6 @@
 # Purpose
 
-This project is designed to automatically adjust the minimum value of an ECS task at regular intervals. The goal is to maintain the optimal level of resources needed to run the task effectively.
+This project is designed to automatically adjust the minimum, maximum value of an ECS task at regular intervals. The goal is to maintain the optimal level of resources needed to run the task effectively.
 
 # Environment
 
